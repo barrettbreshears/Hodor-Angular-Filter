@@ -1,0 +1,24 @@
+<html ng-app="test-hodor">
+	<head>
+		<title>My Custom Filter</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+		<script src="hodor.js"></script>
+	</head>
+	<body ng-controller='MainController'>
+
+		<h1>{{pageHeading | hodor}}</hi>
+		<form>
+			<textarea ng-model="pageHeading"></textarea>
+		</form>
+
+	</body>
+	<script type="text/javascript">
+			var testHodor = angular.module('test-hodor', ['hodor-filter']);
+
+			testHodor.controller('MainController',['$scope', 
+				function($scope) {
+				$scope.pageHeading = "What would hodor say???";
+			}]);
+
+		</script>
+</html>
